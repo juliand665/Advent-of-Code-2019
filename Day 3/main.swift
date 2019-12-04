@@ -89,8 +89,6 @@ let intersections = path1
 	.flatMap { path2.flatMap($0.intersections(with:)) }
 	.filter { $0.position != .zero }
 
-dump(intersections)
-
 let closestIntersection = intersections
 	.map { $0.position.absolute }
 	.min()!
