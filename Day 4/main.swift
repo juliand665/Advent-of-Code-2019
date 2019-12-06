@@ -1,18 +1,5 @@
 import Foundation
 
-extension Int {
-	func digits() -> [Int] {
-		sequence(
-			state: self,
-			next: ({ num in
-				guard num > 0 else { return nil }
-				defer { num /= 10 }
-				return num % 10
-			})
-		).reversed()
-	}
-}
-
 let range = 109165...576723
 
 func isValidPassword(_ password: Int) -> Bool {

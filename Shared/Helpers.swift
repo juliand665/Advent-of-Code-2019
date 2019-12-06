@@ -136,3 +136,20 @@ extension Rotatable where Self: CaseIterable, Self: Equatable, Self.AllCases.Ind
 		return cases[(cases.firstIndex(of: self)! + diff + cases.count) % cases.count]
 	}
 }
+
+extension Int {
+	func digitsFromBack() -> UnfoldSequence<Int, Int> {
+		sequence(
+			state: self,
+			next: ({ num in
+				guard num > 0 else { return nil }
+				defer { num /= 10 }
+				return num % 10
+			})
+		)
+	}
+	
+	func digits() -> [Int] {
+		digitsFromBack().reversed()
+	}
+}
