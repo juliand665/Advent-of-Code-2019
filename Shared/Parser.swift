@@ -39,14 +39,19 @@ struct Parser {
 	}
 	
 	/// - returns: the consumed part, excluding the separator
-	@discardableResult mutating func consume(through separator: Character) -> Substring {
+	@discardableResult
+	mutating func consume(through separator: Character) -> Substring {
 		let index = input.firstIndex(of: separator)!
-		defer { input = input[index...] }
+		defer { input = input[index...].dropFirst() }
 		return input.prefix(upTo: index)
 	}
 	
 	mutating func consume(while separator: Character) {
 		input = input.drop { $0 == separator }
+	}
+	
+	mutating func consumeRest() -> Substring {
+		input <- { _ in input = ""[...] }
 	}
 }
 
