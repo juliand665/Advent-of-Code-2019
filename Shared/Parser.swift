@@ -3,7 +3,7 @@ import Foundation
 struct Parser {
 	var input: Substring
 	
-	var isDone: Bool { return input.isEmpty }
+	var isDone: Bool { input.isEmpty }
 	
 	var next: Character? {
 		input.first
@@ -52,6 +52,11 @@ struct Parser {
 	
 	mutating func consumeRest() -> Substring {
 		input <- { _ in input = ""[...] }
+	}
+	
+	mutating func consumeNext(_ maxLength: Int) -> Substring {
+		defer { input.removeFirst(maxLength) }
+		return input.prefix(maxLength)
 	}
 }
 
