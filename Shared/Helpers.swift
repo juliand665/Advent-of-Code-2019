@@ -62,6 +62,16 @@ extension Collection {
 	func allCombinations() -> AnySequence<(Element, Element)> {
 		AnySequence(lazy.flatMap { zip(repeatElement($0), self) })
 	}
+	
+	func allOrderings() -> [[Element]] {
+		guard !isEmpty else { return [[]] }
+		return zip(indices, self).flatMap { i, element in
+			((
+				Array(self[startIndex..<i])
+					+ self[index(after: i)..<endIndex]
+			)).allOrderings().map { [element] + $0 }
+		}
+	}
 }
 
 extension Character {
