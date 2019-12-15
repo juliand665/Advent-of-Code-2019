@@ -1,9 +1,6 @@
 import Foundation
 
-let program = input()
-	.lines().first!
-	.components(separatedBy: ",")
-	.map { Int($0)! }
+let program = intcodeInput()
 
 print("test output:", run(program: program, withInput: [1]))
 
