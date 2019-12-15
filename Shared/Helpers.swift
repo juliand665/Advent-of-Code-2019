@@ -21,6 +21,13 @@ prefix func ^ <S, T> (keyPath: KeyPath<S, T>) -> (S) -> T {
 	{ $0[keyPath: keyPath] }
 }
 
+infix operator %%: MultiplicationPrecedence
+
+func %% (lhs: Int, rhs: Int) -> Int {
+	let remainder = lhs % rhs
+	return remainder >= 0 ? remainder : remainder + rhs
+}
+
 func repeatElement<T>(_ element: T) -> Repeated<T> {
 	repeatElement(element, count: .max)
 }

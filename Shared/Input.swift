@@ -8,6 +8,6 @@ func input(filename: String = "input") -> String {
 
 extension String {
 	func lines() -> [Substring] {
-		split(separator: "\n")
+		split(separator: "\n", omittingEmptySubsequences: false).dropLast()
 	}
 }

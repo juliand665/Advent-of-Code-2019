@@ -16,6 +16,10 @@ struct Vector2: Hashable {
 		applyingOffsets(.distance1)
 	}
 	
+	var angle: Double {
+		atan2(Double(y), Double(x))
+	}
+	
 	static func + (lhs: Vector2, rhs: Vector2) -> Vector2 {
 		lhs <- { $0 += rhs }
 	}
