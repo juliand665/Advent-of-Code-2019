@@ -127,7 +127,7 @@ extension Sequence {
 }
 
 extension MutableCollection {
-	mutating func mapInPlace(_ transform: (inout Element) -> Void) {
+	mutating func forEachMutate(_ transform: (inout Element) -> Void) {
 		var index = startIndex
 		while index != endIndex {
 			transform(&self[index])

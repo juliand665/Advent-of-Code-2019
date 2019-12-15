@@ -63,7 +63,7 @@ let sorted = offsets
 // this is totally unnecessary since we already know the 200th asteroid fits within our limit of 340 immediately visible ones
 let order = sequence(state: sorted) { (sorted) -> [Vector2]? in
 	let first = sorted.map { $0.first! }
-	sorted.mapInPlace { $0.removeFirst() }
+	sorted.forEachMutate { $0.removeFirst() }
 	sorted.removeAll { $0.isEmpty }
 	return first.isEmpty ? nil : first
 }.joined()
