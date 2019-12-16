@@ -181,3 +181,15 @@ extension Int {
 		digitsFromBack().reversed()
 	}
 }
+
+func gcd(_ a: Int, _ b: Int) -> Int {
+	func _gcd(_ a: Int, _ b: Int) -> Int {
+		b == 0 ? a : _gcd(b, a % b)
+	}
+	
+	return _gcd(abs(a), abs(b))
+}
+
+func lcm(_ a: Int, _ b: Int) -> Int {
+	a * b / gcd(a, b)
+}

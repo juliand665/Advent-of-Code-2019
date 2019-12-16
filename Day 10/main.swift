@@ -1,13 +1,5 @@
 import Foundation
 
-func gcd(_ a: Int, _ b: Int) -> Int {
-	func _gcd(_ a: Int, _ b: Int) -> Int {
-		b == 0 ? a : _gcd(b, a % b)
-	}
-	
-	return _gcd(abs(a), abs(b))
-}
-
 let lines: [[Bool]] = input().lines()
 	.prefix { !$0.isEmpty }
 	.map { $0.map { $0 == "#" } }
