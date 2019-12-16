@@ -5,8 +5,7 @@ struct Vector2: Hashable {
 	static let unitX = Vector2(1, 0)
 	static let unitY = Vector2(0, 1)
 	
-	var x: Int
-	var y: Int
+	var x, y: Int
 	
 	var absolute: Int {
 		abs(x) + abs(y)
@@ -121,7 +120,7 @@ extension Array where Element == Vector2 {
 		Vector2(-1, 00),
 	]
 	
-	static let distance1or2 = [
+	static let distance1orDiagonal = [
 		Vector2(00, -1),
 		Vector2(+1, -1),
 		Vector2(+1, 00),
