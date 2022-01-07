@@ -25,8 +25,7 @@ func run(_ program: [Int]) -> [Int] {
 				let lhs = memory[position + 1]
 				let rhs = memory[position + 2]
 				let dest = memory[position + 3]
-				let result = (opcode == .add ? (+) : (*))(memory[lhs], memory[rhs])
-				memory[dest] = result
+				memory[dest] = (opcode == .add ? (+) : (*))(memory[lhs], memory[rhs])
 				position += 4
 			case .exit:
 				return

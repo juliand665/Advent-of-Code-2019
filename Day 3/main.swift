@@ -49,7 +49,7 @@ struct Segment {
 			ys.map { y in
 				Vector2(x, y)
 			}
-		}.map { ($0, steps(to: $0) + other.steps(to: $0)) }
+		}.map { (position: $0, stepCount: steps(to: $0) + other.steps(to: $0)) }
 	}
 	
 	func intersects(_ other: Segment) -> Bool {
@@ -88,6 +88,8 @@ let path2 = paths[1]
 let intersections = path1
 	.flatMap { path2.flatMap($0.intersections(with:)) }
 	.filter { $0.position != .zero }
+
+print(intersections.count)
 
 let closestIntersection = intersections
 	.map { $0.position.absolute }

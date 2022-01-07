@@ -12,6 +12,7 @@ struct Matrix<Element> {
 	}
 	
 	init(width: Int, height: Int, elements: [Element]) {
+		assert(elements.count == width * height)
 		self.width = width
 		self.height = height
 		self.elements = elements

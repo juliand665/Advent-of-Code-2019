@@ -48,7 +48,7 @@ extension Sequence {
 
 extension Sequence where Element: Equatable {
 	func count(of element: Element) -> Int {
-		lazy.filter { $0 == element }.count
+		count { $0 == element }
 	}
 }
 
