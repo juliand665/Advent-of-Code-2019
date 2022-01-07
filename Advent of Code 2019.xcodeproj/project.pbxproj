@@ -218,6 +218,7 @@
 		B916F46A23A676EF00512563 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B916F46F23A676FA00512563 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		B916F47723A67A9800512563 /* Vector3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		B93D9EE12787F1FE005ACB42 /* AoC-Helpers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "AoC-Helpers"; sourceTree = "<group>"; };
 		B9773349239727FF004DC11F /* Day 1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B977334B239727FF004DC11F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B977335023972858004DC11F /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
@@ -374,6 +375,7 @@
 		B9773332239727E8004DC11F = {
 			isa = PBXGroup;
 			children = (
+				B93D9EE12787F1FE005ACB42 /* AoC-Helpers */,
 				B97733512397286B004DC11F /* Shared */,
 				B977334A239727FF004DC11F /* Day 1 */,
 				B9B561DC23972BF100E2A0F3 /* Day 2 */,
