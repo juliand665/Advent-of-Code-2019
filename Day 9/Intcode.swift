@@ -1,11 +1,12 @@
 import Foundation
+import HandyOperators
 
 func run(program: [Int], withInput inputs: [Int] = []) -> [Int] {
 	(Memory(data: program, inputs: inputs) <- { $0.runProgram() }).outputs
 }
 
 final class Memory {
-	private var data: [Int]
+	var data: [Int]
 	var position = 0
 	var relativeBase = 0
 	
@@ -114,8 +115,9 @@ enum Instruction {
 		let raw = memory.next()
 		let opcode = Opcode(rawValue: raw % 100)!
 		var modes = (raw / 100)
-			.digitsFromBack()
-			.forceMap(Parameter.Mode.init(rawValue:))[...]
+			.digits()
+			.reversed()
+			.map { Parameter.Mode(rawValue: $0)! }[...]
 		
 		func parameter() -> Parameter {
 			return Parameter(
