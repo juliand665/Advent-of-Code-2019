@@ -1,8 +1,9 @@
 import Foundation
 import HandyOperators
+import Collections
 
 func run(program: [Int], withInput inputs: [Int] = []) -> [Int] {
-	(Memory(data: program, inputs: inputs) <- { $0.runProgram() }).outputs
+	.init((Memory(data: program, inputs: inputs) <- { $0.runProgram() }).outputs)
 }
 
 final class Memory {
@@ -10,12 +11,12 @@ final class Memory {
 	var position = 0
 	var relativeBase = 0
 	
-	var inputs: [Int] = []
-	var outputs: [Int] = []
+	var inputs: Deque<Int> = []
+	var outputs: Deque<Int> = []
 	
 	init(data: [Int], inputs: [Int] = []) {
 		self.data = data
-		self.inputs = inputs
+		self.inputs = .init(inputs)
 	}
 	
 	subscript(position: Int) -> Int {
