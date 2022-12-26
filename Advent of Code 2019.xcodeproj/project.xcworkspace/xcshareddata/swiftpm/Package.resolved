@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "ArrayBuilder",
+        "repositoryURL": "https://github.com/juliand665/ArrayBuilder",
+        "state": {
+          "branch": null,
+          "revision": "f713ffd1432c5fb7cbf47a84bd634b18256957b6",
+          "version": "1.1.0"
+        }
+      },
+      {
         "package": "HandyOperators",
         "repositoryURL": "https://github.com/juliand665/HandyOperators",
         "state": {

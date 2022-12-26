@@ -44,6 +44,13 @@
 		B95BA2522958075A00176E4A /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = B95BA2512958075A00176E4A /* Algorithms */; };
 		B95BA2542958075A00176E4A /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B95BA2532958075A00176E4A /* Collections */; };
 		B95BA2562958076000176E4A /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = B95BA24E2958075300176E4A /* input.txt */; };
+		B95BA27229582CA300176E4A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95BA27129582CA300176E4A /* main.swift */; };
+		B95BA27829582CB900176E4A /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = B95BA27629582CAA00176E4A /* input.txt */; };
+		B95BA27A29582CBF00176E4A /* AoC-Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = B95BA27929582CBF00176E4A /* AoC-Helpers */; };
+		B95BA27C29582CBF00176E4A /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = B95BA27B29582CBF00176E4A /* Algorithms */; };
+		B95BA27E29582CBF00176E4A /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B95BA27D29582CBF00176E4A /* Collections */; };
+		B95BA27F29582CCF00176E4A /* Intcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B5627C239F0CAE00E2A0F3 /* Intcode.swift */; };
+		B95BA284295925B300176E4A /* ArrayBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = B95BA283295925B300176E4A /* ArrayBuilder */; };
 		B977334C239727FF004DC11F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977334B239727FF004DC11F /* main.swift */; };
 		B97733572397286C004DC11F /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97733522397286B004DC11F /* Vector2.swift */; };
 		B97733592397286C004DC11F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97733542397286B004DC11F /* Helpers.swift */; };
@@ -196,6 +203,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B95BA26D29582CA200176E4A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B95BA27729582CB700176E4A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				B95BA27829582CB900176E4A /* input.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B977335C2397298D004DC11F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,6 +343,9 @@
 		B95BA2472958073F00176E4A /* Day 16 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 16"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95BA2492958074000176E4A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B95BA24E2958075300176E4A /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
+		B95BA26F29582CA200176E4A /* Day 17 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 17"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B95BA27129582CA300176E4A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B95BA27629582CAA00176E4A /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		B9773349239727FF004DC11F /* Day 1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B977334B239727FF004DC11F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B977335023972858004DC11F /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
@@ -397,6 +426,17 @@
 				B95BA2542958075A00176E4A /* Collections in Frameworks */,
 				B95BA2522958075A00176E4A /* Algorithms in Frameworks */,
 				B95BA2502958075A00176E4A /* AoC-Helpers in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B95BA26C29582CA200176E4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B95BA27E29582CBF00176E4A /* Collections in Frameworks */,
+				B95BA27C29582CBF00176E4A /* Algorithms in Frameworks */,
+				B95BA284295925B300176E4A /* ArrayBuilder in Frameworks */,
+				B95BA27A29582CBF00176E4A /* AoC-Helpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +577,15 @@
 			path = "Day 16";
 			sourceTree = "<group>";
 		};
+		B95BA27029582CA300176E4A /* Day 17 */ = {
+			isa = PBXGroup;
+			children = (
+				B95BA27129582CA300176E4A /* main.swift */,
+				B95BA27629582CAA00176E4A /* input.txt */,
+			);
+			path = "Day 17";
+			sourceTree = "<group>";
+		};
 		B9773332239727E8004DC11F = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +607,7 @@
 				B95BA1DD2954139700176E4A /* Day 14 */,
 				B95BA22D2957FD6300176E4A /* Day 15 */,
 				B95BA2482958074000176E4A /* Day 16 */,
+				B95BA27029582CA300176E4A /* Day 17 */,
 				B977333C239727E8004DC11F /* Products */,
 				B93D9EE22787F225005ACB42 /* Frameworks */,
 			);
@@ -582,6 +632,7 @@
 				B95BA1DC2954139700176E4A /* Day 14 */,
 				B95BA22C2957FD6200176E4A /* Day 15 */,
 				B95BA2472958073F00176E4A /* Day 16 */,
+				B95BA26F29582CA200176E4A /* Day 17 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -803,6 +854,30 @@
 			productReference = B95BA2472958073F00176E4A /* Day 16 */;
 			productType = "com.apple.product-type.tool";
 		};
+		B95BA26E29582CA200176E4A /* Day 17 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B95BA27529582CA300176E4A /* Build configuration list for PBXNativeTarget "Day 17" */;
+			buildPhases = (
+				B95BA26B29582CA200176E4A /* Sources */,
+				B95BA26C29582CA200176E4A /* Frameworks */,
+				B95BA26D29582CA200176E4A /* CopyFiles */,
+				B95BA27729582CB700176E4A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Day 17";
+			packageProductDependencies = (
+				B95BA27929582CBF00176E4A /* AoC-Helpers */,
+				B95BA27B29582CBF00176E4A /* Algorithms */,
+				B95BA27D29582CBF00176E4A /* Collections */,
+				B95BA283295925B300176E4A /* ArrayBuilder */,
+			);
+			productName = "Day 17";
+			productReference = B95BA26F29582CA200176E4A /* Day 17 */;
+			productType = "com.apple.product-type.tool";
+		};
 		B9773348239727FF004DC11F /* Day 1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B977334D239727FF004DC11F /* Build configuration list for PBXNativeTarget "Day 1" */;
@@ -816,6 +891,8 @@
 			dependencies = (
 			);
 			name = "Day 1";
+			packageProductDependencies = (
+			);
 			productName = "Day 1";
 			productReference = B9773349239727FF004DC11F /* Day 1 */;
 			productType = "com.apple.product-type.tool";
@@ -1023,6 +1100,9 @@
 					B95BA2462958073F00176E4A = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					B95BA26E29582CA200176E4A = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					B9773348239727FF004DC11F = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -1070,6 +1150,7 @@
 			packageReferences = (
 				B93D9EEB2787F449005ACB42 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				B95BA23C2958004300176E4A /* XCRemoteSwiftPackageReference "swift-collections" */,
+				B95BA280295925A500176E4A /* XCRemoteSwiftPackageReference "ArrayBuilder" */,
 			);
 			productRefGroup = B977333C239727E8004DC11F /* Products */;
 			projectDirPath = "";
@@ -1091,6 +1172,7 @@
 				B95BA1DB2954139700176E4A /* Day 14 */,
 				B95BA22B2957FD6100176E4A /* Day 15 */,
 				B95BA2462958073F00176E4A /* Day 16 */,
+				B95BA26E29582CA200176E4A /* Day 17 */,
 			);
 		};
 /* End PBXProject section */
@@ -1146,6 +1228,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B95BA24A2958074000176E4A /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B95BA26B29582CA200176E4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B95BA27F29582CCF00176E4A /* Intcode.swift in Sources */,
+				B95BA27229582CA300176E4A /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1404,6 +1495,30 @@
 			name = Debug;
 		};
 		B95BA24D2958074100176E4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2EPDFA9PV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B95BA27329582CA300176E4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2EPDFA9PV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B95BA27429582CA300176E4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1866,6 +1981,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B95BA27529582CA300176E4A /* Build configuration list for PBXNativeTarget "Day 17" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B95BA27329582CA300176E4A /* Debug */,
+				B95BA27429582CA300176E4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B9773336239727E8004DC11F /* Build configuration list for PBXProject "Advent of Code 2019" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1993,6 +2117,14 @@
 				kind = branch;
 			};
 		};
+		B95BA280295925A500176E4A /* XCRemoteSwiftPackageReference "ArrayBuilder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/juliand665/ArrayBuilder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2051,6 +2183,25 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B95BA23C2958004300176E4A /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
+		};
+		B95BA27929582CBF00176E4A /* AoC-Helpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "AoC-Helpers";
+		};
+		B95BA27B29582CBF00176E4A /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B93D9EEB2787F449005ACB42 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		B95BA27D29582CBF00176E4A /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B95BA23C2958004300176E4A /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		B95BA283295925B300176E4A /* ArrayBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B95BA280295925A500176E4A /* XCRemoteSwiftPackageReference "ArrayBuilder" */;
+			productName = ArrayBuilder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

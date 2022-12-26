@@ -1,18 +1,23 @@
 import Foundation
 import HandyOperators
 import Collections
+import AoC_Helpers
 
 func run(program: [Int], withInput inputs: [Int] = []) -> [Int] {
 	.init((Memory(data: program, inputs: inputs) <- { $0.runProgram() }).outputs)
 }
 
-final class Memory {
+struct Memory {
 	var data: [Int]
 	var position = 0
 	var relativeBase = 0
 	
 	var inputs: Deque<Int> = []
 	var outputs: Deque<Int> = []
+	
+	init(from input: some StringProtocol) {
+		self.init(data: input.split(separator: ",").asInts())
+	}
 	
 	init(data: [Int], inputs: [Int] = []) {
 		self.data = data
@@ -36,15 +41,15 @@ final class Memory {
 		set { self[parameter.address(in: self)] = newValue }
 	}
 	
-	func next() -> Int {
+	mutating func next() -> Int {
 		defer { position += 1 }
 		return data[position]
 	}
 	
 	@discardableResult
-	func runProgram(exitOnOutput: Bool = false) -> ExitReason {
+	mutating func runProgram(exitOnOutput: Bool = false) -> ExitReason {
 		while true {
-			switch Instruction(from: self) {
+			switch Instruction(from: &self) {
 			case let .add(lhs, rhs, dest):
 				self[dest] = self[lhs] + self[rhs]
 			case let .multiply(lhs, rhs, dest):
@@ -82,7 +87,7 @@ final class Memory {
 		}
 	}
 	
-	func nextOutput() -> Int? {
+	mutating func nextOutput() -> Int? {
 		switch runProgram(exitOnOutput: true) {
 		case .outputProduced(let output):
 			return output
@@ -112,7 +117,7 @@ enum Instruction {
 	case adjustRelativeBase(Parameter)
 	case exit
 	
-	init(from memory: Memory) {
+	init(from memory: inout Memory) {
 		let raw = memory.next()
 		let opcode = Opcode(rawValue: raw % 100)!
 		var modes = (raw / 100)

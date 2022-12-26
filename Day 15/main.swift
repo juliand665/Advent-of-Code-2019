@@ -2,8 +2,7 @@ import Foundation
 import AoC_Helpers
 import Algorithms
 
-let code = input().split(separator: ",").asInts()
-let memory = Memory(data: code)
+let memory = Memory(from: input())
 
 let directionCommands = Direction.nswe.enumerated().map { ($1, $0 + 1) }.asDictionary()
 
