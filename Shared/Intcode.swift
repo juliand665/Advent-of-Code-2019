@@ -1,10 +1,18 @@
 import Foundation
-import HandyOperators
 import Collections
 import AoC_Helpers
 
+func intcodeInput() -> [Int] {
+    input()
+        .lines().first!
+        .split(separator: ",")
+        .map { Int($0, radix: 10)! }
+}
+
 func run(program: [Int], withInput inputs: [Int] = []) -> [Int] {
-	.init((Memory(data: program, inputs: inputs) <- { $0.runProgram() }).outputs)
+    var memory = Memory(data: program, inputs: inputs)
+    memory.runProgram()
+	return .init(memory.outputs)
 }
 
 struct Memory {
@@ -55,8 +63,7 @@ struct Memory {
 			case let .multiply(lhs, rhs, dest):
 				self[dest] = self[lhs] * self[rhs]
 			case let .input(dest):
-				if let input = inputs.first {
-					inputs.removeFirst()
+                if let input = inputs.popFirst() {
 					self[dest] = input
 				} else {
 					return .inputRequired
