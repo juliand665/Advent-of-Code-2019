@@ -700,6 +700,7 @@
 				B93D9EE22787F225005ACB42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		B977333C239727E8004DC11F /* Products */ = {
 			isa = PBXGroup;
