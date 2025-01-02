@@ -18,7 +18,7 @@ print(map)
 let start = map.onlyIndex { Direction($0) != nil }!
 let startDir = Direction(map[start])!
 
-let intersections = map.positions().filter {
+let intersections = map.positions.filter {
 	$0.neighbors.allSatisfy { map.element(at: $0) == "#" }
 }
 print("intersection score:", intersections.map(\.product).sum()) // 2660
