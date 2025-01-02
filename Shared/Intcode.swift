@@ -57,41 +57,53 @@ struct Memory {
 	@discardableResult
 	mutating func runProgram(exitOnOutput: Bool = false) -> ExitReason {
 		while true {
-			switch Instruction(from: &self) {
-			case let .add(lhs, rhs, dest):
-				self[dest] = self[lhs] + self[rhs]
-			case let .multiply(lhs, rhs, dest):
-				self[dest] = self[lhs] * self[rhs]
-			case let .input(dest):
-                if let input = inputs.popFirst() {
-					self[dest] = input
-				} else {
-					return .inputRequired
-				}
-			case let .output(source):
-				let output = self[source]
-				outputs.append(output)
-				if exitOnOutput {
-					return .outputProduced(output)
-				}
-			case let .jumpIfTrue(condition, dest):
-				if self[condition] != 0 {
-					position = self[dest]
-				}
-			case let .jumpIfFalse(condition, dest):
-				if self[condition] == 0 {
-					position = self[dest]
-				}
-			case let .lessThan(lhs, rhs, dest):
-				self[dest] = self[lhs] < self[rhs] ? 1 : 0
-			case let .equals(lhs, rhs, dest):
-				self[dest] = self[lhs] == self[rhs] ? 1 : 0
-			case let .adjustRelativeBase(offset):
-				relativeBase += self[offset]
-			case .exit:
-				return .exitInstruction
+			let (output, exit) = step()
+			if let exit {
+				return exit
+			}
+			if exitOnOutput, let output {
+				return .outputProduced(output)
 			}
 		}
+	}
+	
+	@discardableResult
+	mutating func step() -> (output: Int?, exit: ExitReason?) {
+		let initialPosition = position
+		switch Instruction(from: &self) {
+		case let .add(lhs, rhs, dest):
+			self[dest] = self[lhs] + self[rhs]
+		case let .multiply(lhs, rhs, dest):
+			self[dest] = self[lhs] * self[rhs]
+		case let .input(dest):
+			if let input = inputs.popFirst() {
+				self[dest] = input
+			} else {
+				position = initialPosition // reset
+				return (nil, .inputRequired)
+			}
+		case let .output(source):
+			let output = self[source]
+			outputs.append(output)
+			return (output, nil)
+		case let .jumpIfTrue(condition, dest):
+			if self[condition] != 0 {
+				position = self[dest]
+			}
+		case let .jumpIfFalse(condition, dest):
+			if self[condition] == 0 {
+				position = self[dest]
+			}
+		case let .lessThan(lhs, rhs, dest):
+			self[dest] = self[lhs] < self[rhs] ? 1 : 0
+		case let .equals(lhs, rhs, dest):
+			self[dest] = self[lhs] == self[rhs] ? 1 : 0
+		case let .adjustRelativeBase(offset):
+			relativeBase += self[offset]
+		case .exit:
+			return (nil, .exitInstruction)
+		}
+		return (nil, nil)
 	}
 	
 	mutating func nextOutput() -> Int? {
